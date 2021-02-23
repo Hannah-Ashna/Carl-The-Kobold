@@ -14,9 +14,8 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     private bool spawned = false;
     void Start(){
-        Destroy(gameObject, 4f);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("SpawnRoom", 0.7f);
+        Invoke("SpawnRoom", 0.1f);
     }
 
     void SpawnRoom(){
@@ -40,7 +39,7 @@ public class RoomSpawner : MonoBehaviour
                 rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
             } else {
-                print("Error");
+                print("Error - Room Direction Value issue");
             }
 
             spawned = true;
@@ -49,12 +48,16 @@ public class RoomSpawner : MonoBehaviour
 
     // Prevent rooms from being spawned on top of each other
     void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("SpawnPoint")){
-            if(collision.GetComponent<RoomSpawner>().spawned == false && spawned == false){
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+        try {
+            if(collision.CompareTag("SpawnPoint")){
+                if(collision.GetComponent<RoomSpawner>().spawned == false && spawned == false){
+                    Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                spawned = true;
             }
-            spawned = true;
+        } catch {
+            print("NULL");
         }
     }
 }
