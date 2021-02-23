@@ -15,7 +15,7 @@ public class RoomSpawner : MonoBehaviour
     private bool spawned = false;
     void Start(){
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("SpawnRoom", 0.1f);
+        Invoke("SpawnRoom", 0.7f);
     }
 
     void SpawnRoom(){
@@ -49,7 +49,6 @@ public class RoomSpawner : MonoBehaviour
     // Prevent rooms from being spawned on top of each other
     void onTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("SpawnPoint") && collision.GetComponent<RoomSpawner>().spawned == true){
-            // Destroy the spawn point
             Destroy(gameObject);
         }
     }
