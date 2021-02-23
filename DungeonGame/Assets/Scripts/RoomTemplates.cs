@@ -9,4 +9,5 @@ public class RoomTemplates : MonoBehaviour
    public GameObject[] botRooms;
    public GameObject[] rightRooms;
    public GameObject[] leftRooms;
+   public GameObject closedRoom;
 }

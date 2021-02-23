@@ -1604,11 +1604,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8360040475206026814}
-  - component: {fileID: 8360040475206026813}
+  - component: {fileID: 4262587115747034665}
   - component: {fileID: 8360040475206026812}
   - component: {fileID: 8360040475206026815}
   m_Layer: 0
-  m_Name: Spawn Point
+  m_Name: Destroyer
   m_TagString: SpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1628,7 +1628,7 @@ Transform:
   m_Father: {fileID: 8360040474414836226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8360040475206026813
+--- !u!114 &4262587115747034665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1637,10 +1637,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8360040475206026801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe27a987d9e3fe14dbfe55bcc0e84b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: 0
 --- !u!61 &8360040475206026812
 BoxCollider2D:
   m_ObjectHideFlags: 0
