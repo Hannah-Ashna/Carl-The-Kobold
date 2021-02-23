@@ -48,7 +48,7 @@ public class RoomSpawner : MonoBehaviour
 
     // Prevent rooms from being spawned on top of each other
     void onTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("SpawnPoint") && collision.GetComponent<RoomSpawner>().spawned == true){
+        if(collision.CompareTag("SpawnPoint")){
             Destroy(gameObject);
         }
     }
