@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2923393826892521298}
   m_Layer: 0
   m_Name: Spawn Point
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 3
 --- !u!61 &7782096154355405772
 BoxCollider2D:
   m_ObjectHideFlags: 0

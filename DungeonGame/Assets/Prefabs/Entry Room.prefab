@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 7153608970770622534}
   m_Layer: 0
   m_Name: Spawn Point
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 3
 --- !u!61 &7153608970770622535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1055,7 +1056,7 @@ GameObject:
   - component: {fileID: 7153608971482257348}
   m_Layer: 0
   m_Name: Spawn Point (1)
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,6 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 4
 --- !u!61 &7153608971482257349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1228,7 +1230,7 @@ GameObject:
   - component: {fileID: 7153608971661736249}
   m_Layer: 0
   m_Name: Spawn Point (2)
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1259,6 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 2
 --- !u!61 &7153608971661736250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2601,7 +2604,7 @@ GameObject:
   - component: {fileID: 7153608972405010789}
   m_Layer: 0
   m_Name: Spawn Point (3)
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2632,6 +2635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9938d8351a5f1bf4b9b7eb69d4ad6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 1
 --- !u!61 &7153608972405010790
 BoxCollider2D:
   m_ObjectHideFlags: 0
