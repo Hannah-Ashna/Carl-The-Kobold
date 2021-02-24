@@ -14,8 +14,8 @@ public class RoomTemplates : MonoBehaviour
    // Store a list of all the rooms generated
    public List<GameObject> rooms;
 
-   // Spawn a Boss 
-   public float waitTime;
+   // Spawn a Boss/Minions within the room templates
+   private float waitTime = 2f;
    private bool spawnedBoss;
    private int rand;
    private int randX;
@@ -24,19 +24,23 @@ public class RoomTemplates : MonoBehaviour
    public GameObject Minion;
 
    void Update(){
+      // Wait for the rooms to finish generating before attempting to spawn enemies
       if (waitTime <= 0 && spawnedBoss == false){
          for (int i = 1; i < rooms.Count; i++){
 
-            rand = Random.Range(1, 4);
+            // Decide how many minions to randomly spawn
+            rand = Random.Range(1, 5);
             Vector3 minionPos;
 
             for (int j = 0; j < rand; j++){
+               // Decide where to spawn the minion within the room
                randX = Random.Range(-5, 5);
                randY = Random.Range(-5, 5);
                minionPos = rooms[i].transform.position + new Vector3(randX, randY, 0);
                Instantiate(Minion, minionPos, Quaternion.identity);
             }
 
+            // If this is the last room, spawn in the Boss
             if(i == rooms.Count-1){
                Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
                spawnedBoss = true;
