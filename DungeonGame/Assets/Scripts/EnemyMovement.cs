@@ -5,15 +5,17 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private NavMeshAgent nav;
+    public float speed;
     private Transform player;
 
     void Start(){
-        nav = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void Update(){
-        nav.SetDestination(player.position);
+        if(Vector2.Distance(transform.position, player.position) < 3.5 && Vector2.Distance(transform.position, player.position) > 3){
+            Vector3 playerPos = player.position;
+            transform.position = Vector2.MoveTowards(transform.position, playerPos, speed * Time.deltaTime);
+        }
     }
 }
