@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3812500547668938031}
   - component: {fileID: 3455169893075704178}
   - component: {fileID: 3654238130920339728}
+  - component: {fileID: 2896273596729190390}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Enemy
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   stopDist: 3
-  retreatDist: 2
+  retreatDist: 0.5
 --- !u!61 &3812500547668938031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,10 +111,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.32766724, y: -0.00000047683716}
+  m_Offset: {x: -0.11070919, y: -0.0000009536743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -124,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.08246, y: 10.349444}
+  m_Size: {x: 13.768715, y: 13.300051}
   m_EdgeRadius: 0
 --- !u!50 &3455169893075704178
 Rigidbody2D:
@@ -159,6 +160,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae4e951ee3c86744a1035803f56190a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBetweenShots: 2
   projectile: {fileID: 6776009170480478244, guid: f11ccd83bd20c3244b96343f81898536,
     type: 3}
+--- !u!114 &2896273596729190390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902493984034439241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5b66ea3ff95434dad32c665299df6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 25
