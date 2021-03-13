@@ -52,6 +52,6 @@ public class PlayerData : MonoBehaviour
     }
 
     void KillPlayer(){
-        Destroy(player);
+        //Destroy(player);
     }
 }
