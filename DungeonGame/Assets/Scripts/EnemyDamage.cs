@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     private float timeBetweenShots;
-    public float startTimeBetweenShots;
+    private float startTimeBetweenShots;
     public GameObject projectile;
 
     void Start (){
+        startTimeBetweenShots = Random.Range(1f, 2f);
         timeBetweenShots = startTimeBetweenShots;
     }
 

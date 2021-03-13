@@ -5,13 +5,15 @@ using TMPro;
 public class PlayerData : MonoBehaviour
 {
 
-    private int health = 100;
-    private double sanity = 100;
+    public double sanity;
+    public double health; 
     private float timer;
     private TextMeshProUGUI Score;
+    private GameObject player;
 
     void Start(){
         Score = GameObject.FindGameObjectWithTag("Score").GetComponent<TextMeshProUGUI>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -25,11 +27,31 @@ public class PlayerData : MonoBehaviour
 
             // Check if the sanity is below the desired level
             if (sanity <= 30){
-                health = 0;
+                KillPlayer();
             }
+        }
 
-            // Update the Game's Scoreboard
+        //Score.text = "Sanity: " + sanity + "\nHealth: " + health;
+    }
+
+    public void ReduceHealth(){
+        if (health != 0) {
+            health = health - 0.5;
             Score.text = "Sanity: " + sanity + "\nHealth: " + health;
         }
+
+        else {
+            KillPlayer();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("Player")){
+            KillPlayer();
+        }
+    }
+
+    void KillPlayer(){
+        Destroy(player);
     }
 }
