@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyData : MonoBehaviour
 {
-    public double health;
+    private double health = 25;
 
     void Update (){
         //print(health);

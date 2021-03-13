@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae4e951ee3c86744a1035803f56190a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6776009170480478244, guid: f11ccd83bd20c3244b96343f81898536,
+  projectile: {fileID: 6126081398156979486, guid: f11ccd83bd20c3244b96343f81898536,
     type: 3}
 --- !u!114 &2896273596729190390
 MonoBehaviour:
@@ -174,4 +174,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5b66ea3ff95434dad32c665299df6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25

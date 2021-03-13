@@ -31,7 +31,6 @@ public class PlayerData : MonoBehaviour
             }
         }
 
-        //Score.text = "Sanity: " + sanity + "\nHealth: " + health;
     }
 
     public void ReduceHealth(){

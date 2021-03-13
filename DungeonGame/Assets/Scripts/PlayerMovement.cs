@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollision2DEnter(){
-        print("boink");
         velocity = velocity * 0;
     }
 

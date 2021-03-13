@@ -7,20 +7,25 @@ public class EnemyDamage : MonoBehaviour
     private float timeBetweenShots;
     private float startTimeBetweenShots;
     public GameObject projectile;
+    private Transform player;
 
     void Start (){
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startTimeBetweenShots = Random.Range(1f, 2f);
         timeBetweenShots = startTimeBetweenShots;
     }
 
     void Update(){
-        if (timeBetweenShots <= 0){
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBetweenShots = startTimeBetweenShots;
+        if (Vector2.Distance(transform.position, player.position) < 6){
+            if (timeBetweenShots <= 0){
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                timeBetweenShots = startTimeBetweenShots;
+            }
+
+            else {
+                timeBetweenShots -= Time.deltaTime;
+            }
         }
 
-        else {
-            timeBetweenShots -= Time.deltaTime;
-        }
     }
 }
