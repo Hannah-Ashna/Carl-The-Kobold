@@ -16,7 +16,8 @@ public class EnemyData : MonoBehaviour
         }
 
         else {
-            DestroyImmediate(gameObject);
+            print("enemy die");
+            Destroy(gameObject);
         }  
     } 
 }
