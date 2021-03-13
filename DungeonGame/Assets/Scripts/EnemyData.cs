@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyData : MonoBehaviour
 {
-    private double health = 25;
+    public double health;
 
     void Update (){
         //print(health);
@@ -16,8 +16,17 @@ public class EnemyData : MonoBehaviour
         }
 
         else {
-            print("enemy die");
-            Destroy(gameObject);
-        }  
-    } 
+            KillEnemy();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("Player") && health == 0){
+            KillEnemy();
+        }
+    }
+
+    void KillEnemy(){
+        Destroy(gameObject);
+    }
 }
