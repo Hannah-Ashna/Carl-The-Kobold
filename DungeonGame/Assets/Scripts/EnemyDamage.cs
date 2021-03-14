@@ -18,7 +18,7 @@ public class EnemyDamage : MonoBehaviour
     void Update(){
         if (Vector2.Distance(transform.position, player.position) < 6){
             if (timeBetweenShots <= 0){
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                Instantiate(projectile, transform.position, player.rotation);
                 timeBetweenShots = startTimeBetweenShots;
             }
 

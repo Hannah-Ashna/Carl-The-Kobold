@@ -33,9 +33,9 @@ public class PlayerData : MonoBehaviour
 
     }
 
-    public void ReduceHealth(){
+    public void ReduceHealth(int damage){
         if (health != 0) {
-            health = health - 0.5;
+            health = health - damage;
             Score.text = "Sanity: " + sanity + "\nHealth: " + health;
         }
 

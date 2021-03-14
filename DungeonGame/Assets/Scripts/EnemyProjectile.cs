@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
+    public int damage;
     private Transform player;
     private GameObject playerObj;
     private Vector2 target;
@@ -18,7 +19,6 @@ public class EnemyProjectile : MonoBehaviour
 
     void Update(){
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-
         // Check if projectile reaches player
         if (transform.position.x == target.x && transform.position.y == target.y){
             DestroyProjectile();
@@ -27,7 +27,7 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
-            playerObj.GetComponent<PlayerData>().ReduceHealth();
+            playerObj.GetComponent<PlayerData>().ReduceHealth(damage);
             DestroyProjectile();
         }
     }

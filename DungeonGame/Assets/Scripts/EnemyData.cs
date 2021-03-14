@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class EnemyData : MonoBehaviour
 {
-    private double health = 25;
-    private bool destroyEnemy = false;
-    void Update (){
-        if (destroyEnemy == true) {
-            KillEnemy();
-        }
-    }
+    public double health;
 
     public void damageEnemy(){
-        print(health);
+        // If enemy is still healthy, reduce their health
         if (health > 0) {
             health -= 5;
         }
 
+        // Otherwise kill them off
         if (health == 0) {
              KillEnemy();
         }
