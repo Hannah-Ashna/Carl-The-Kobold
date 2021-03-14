@@ -7,22 +7,14 @@ public class EnemyData : MonoBehaviour
     public double health;
 
     void Update (){
-        //print(health);
+        if (health == 0) {
+            KillEnemy();
+        }
     }
 
     public void damageEnemy(){
         if (health > 0) {
             health -= 5;
-        }
-
-        else {
-            KillEnemy();
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player") && health == 0){
-            KillEnemy();
         }
     }
 
