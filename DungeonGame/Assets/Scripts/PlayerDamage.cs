@@ -5,14 +5,12 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
     private GameObject enemyObj;
-    private bool nearEnemy = false;
+    public bool nearEnemy = false;
 
-    void Update()
-    {
+    void Update() {
         // User attacks enemy by pressing space
         if (Input.GetKeyDown(KeyCode.Space) && nearEnemy == true){
             try {
-                enemyObj = GameObject.FindGameObjectWithTag("Enemy");
                 attackEnemy();
                 print("HIT!");
             } catch {
@@ -24,6 +22,8 @@ public class PlayerDamage : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         // Check if the player is colliding with enemy
         if (other.CompareTag("Enemy")){
+            // Targets the correct Enemy object instead of a random one
+            enemyObj = other.gameObject;
             nearEnemy = true;
         }
     }

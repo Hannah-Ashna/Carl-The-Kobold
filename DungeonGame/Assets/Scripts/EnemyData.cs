@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class EnemyData : MonoBehaviour
 {
-    public double health;
-
+    private double health = 25;
+    private bool destroyEnemy = false;
     void Update (){
-        if (health == 0) {
+        if (destroyEnemy == true) {
             KillEnemy();
         }
     }
 
     public void damageEnemy(){
+        print(health);
         if (health > 0) {
             health -= 5;
+        }
+
+        if (health == 0) {
+             KillEnemy();
         }
     }
 
