@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
     private GameObject enemyObj;
+    private Loot loot;
+    private bool isEnemyDead = false;
     public bool nearEnemy = false;
 
+    void Start(){
+        loot = GameObject.FindGameObjectWithTag("Loot").GetComponent<Loot>();
+    }
     void Update() {
         // User attacks enemy by pressing space
         if (Input.GetKeyDown(KeyCode.Space) && nearEnemy == true){
@@ -37,6 +42,30 @@ public class PlayerDamage : MonoBehaviour
 
     void attackEnemy(){
         // Damage the enemy by reducing its health
-        enemyObj.GetComponent<EnemyData>().damageEnemy();
+        isEnemyDead = enemyObj.GetComponent<EnemyData>().damageEnemy();
+
+        // Drop some Loot if Enemy is Dead
+        if (isEnemyDead == true){
+            // Randomise Loot Chance
+            int chance = Random.Range(1, 10);
+            if (chance == 1) {
+                // Spawn Super Health Potion
+                Instantiate(loot.Potions[1], enemyObj.transform.position, Quaternion.identity);
+            } else if (chance == 10) {
+                // Spawn Super Sanity Potion
+                Instantiate(loot.Potions[3], enemyObj.transform.position, Quaternion.identity);
+            } else if (chance < 5){
+                // Spawn Normal Health Potion
+                Instantiate(loot.Potions[0], enemyObj.transform.position, Quaternion.identity);
+            } else if (chance > 8) {
+                // Spawn Normal Sanity Potion
+                Instantiate(loot.Potions[2], enemyObj.transform.position, Quaternion.identity);
+            } else {
+                // Spawn Nothing
+            }
+            
+            // Reset Status
+            isEnemyDead = false;
+        }
     }
 }

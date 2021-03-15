@@ -6,19 +6,26 @@ public class EnemyData : MonoBehaviour
 {
     public double health;
 
-    public void damageEnemy(){
+    public bool damageEnemy(){
         // If enemy is still healthy, reduce their health
         if (health > 0) {
             health -= 5;
+
+            return false;
         }
 
         // Otherwise kill them off
-        if (health == 0) {
-             KillEnemy();
+        else if (health == 0) {          
+            KillEnemy();
+            return true;
+        }
+
+        else {
+            return false;
         }
     }
 
     void KillEnemy(){
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
 }
