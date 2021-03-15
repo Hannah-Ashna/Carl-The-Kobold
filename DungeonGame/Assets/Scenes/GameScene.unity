@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &125857753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4327091219734006233, guid: 12fdc3f0de630524dba250f870f1bc33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1937515230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &125857756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125857753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da5067a4407b7244ac76035c5f09da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +250,6 @@ GameObject:
   - component: {fileID: 875617971}
   - component: {fileID: 875617973}
   - component: {fileID: 875617974}
-  - component: {fileID: 875617975}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -342,25 +359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearEnemy: 0
---- !u!95 &875617975
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875617968}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 737e4fe1ce1fdf54a829de9f8765b654, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &881360637
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +563,7 @@ MonoBehaviour:
   closedRoom: {fileID: 1662242009800786917, guid: 6b3f63d726272a44781e23b1cdd794de,
     type: 3}
   rooms: []
-  Boss: {fileID: 7670384005953795009, guid: 7b91a696a37241844bc319eaf674b814, type: 3}
+  Boss: {fileID: 3277551600746230107, guid: 320978d449eb98644baac1e47665cb16, type: 3}
   Minion: {fileID: 8902493984034439241, guid: 0ae36a129c547e148b7cc8cfa044f870, type: 3}
 --- !u!4 &1358125327
 Transform:
@@ -808,13 +806,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3951260300094195934, guid: 12fdc3f0de630524dba250f870f1bc33,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 737e4fe1ce1fdf54a829de9f8765b654, type: 2}
     - target: {fileID: 4327091219734006233, guid: 12fdc3f0de630524dba250f870f1bc33,
         type: 3}
       propertyPath: m_Name
       value: Adventurer
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3951260300094195934, guid: 12fdc3f0de630524dba250f870f1bc33, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fdc3f0de630524dba250f870f1bc33, type: 3}
 --- !u!4 &1937515231 stripped
 Transform:
