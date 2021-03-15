@@ -18,7 +18,11 @@ public class EnemyDamage : MonoBehaviour
     void Update(){
         if (Vector2.Distance(transform.position, player.position) < 6){
             if (timeBetweenShots <= 0){
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                // Calculate the Angle of rotation for projectile
+                Vector3 dir = player.position - transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+                Instantiate(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
                 timeBetweenShots = startTimeBetweenShots;
             } else {
                 timeBetweenShots -= Time.deltaTime;
