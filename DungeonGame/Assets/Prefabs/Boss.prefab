@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2023383257829454647}
   - component: {fileID: 7363637138323541772}
   - component: {fileID: -8157966370755244684}
+  - component: {fileID: -317450424468086163}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   stopDist: 4
-  retreatDist: 0.5
+  retreatDist: 1
 --- !u!114 &-8157966370755244684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,3 +197,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3400316720109425386, guid: e1c9655e22a540d488975a1816fa17da,
     type: 3}
+--- !u!114 &-317450424468086163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343790925363036368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8145b9b5d043ed46929aff86cce08e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

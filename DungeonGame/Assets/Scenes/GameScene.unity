@@ -612,7 +612,7 @@ MonoBehaviour:
     type: 3}
   rooms: []
   Boss: {fileID: 5343790925363036368, guid: 717cbfa15c375c54989eafe3e649e422, type: 3}
-  Minion: {fileID: 8902493984034439241, guid: 0ae36a129c547e148b7cc8cfa044f870, type: 3}
+  Minion: {fileID: 5013200147377633521, guid: 2dd3ff5eb77b9b14296ac7106f303f22, type: 3}
 --- !u!4 &1358125327
 Transform:
   m_ObjectHideFlags: 0
