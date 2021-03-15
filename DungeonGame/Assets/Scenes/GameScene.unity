@@ -563,7 +563,7 @@ MonoBehaviour:
   closedRoom: {fileID: 1662242009800786917, guid: 6b3f63d726272a44781e23b1cdd794de,
     type: 3}
   rooms: []
-  Boss: {fileID: 3277551600746230107, guid: 320978d449eb98644baac1e47665cb16, type: 3}
+  Boss: {fileID: 5343790925363036368, guid: 717cbfa15c375c54989eafe3e649e422, type: 3}
   Minion: {fileID: 8902493984034439241, guid: 0ae36a129c547e148b7cc8cfa044f870, type: 3}
 --- !u!4 &1358125327
 Transform:

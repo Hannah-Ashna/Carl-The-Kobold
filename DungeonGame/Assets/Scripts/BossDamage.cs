@@ -8,13 +8,13 @@ public class BossDamage : MonoBehaviour
     private float startTimeBetweenShots;
     public GameObject projectile;
     private Transform player;
-    private bool attackMade = false;
 
     // Animation
     SpriteRenderer spriteRenderer;
     Animator animator;
     RuntimeAnimatorController attackAnim;
     RuntimeAnimatorController idleAnim;
+    RuntimeAnimatorController walkAnim;
 
     void Start (){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -26,27 +26,34 @@ public class BossDamage : MonoBehaviour
         animator = GetComponent<Animator>();
         attackAnim = Resources.Load("Animations/BossAttack") as RuntimeAnimatorController;
         idleAnim = Resources.Load("Animations/BossIdle") as RuntimeAnimatorController;
+        walkAnim = Resources.Load("Animations/BossWalk") as RuntimeAnimatorController;
     }
 
     void Update(){
         if (Vector2.Distance(transform.position, player.position) < 6){
             if (timeBetweenShots <= 0){
-                attackMade = true;
                 Instantiate(projectile, transform.position, player.rotation);
                 timeBetweenShots = startTimeBetweenShots;
             }
 
             else {
-                attackMade = false;
                 timeBetweenShots -= Time.deltaTime;
             }
         }
     }
 
     void FixedUpdate(){
-        if (Vector2.Distance(transform.position, player.position) < 6){
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
+            animator.runtimeAnimatorController = walkAnim;
+        }
+        else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
             animator.runtimeAnimatorController = attackAnim;
-        } else {
+        }
+        else {
             animator.runtimeAnimatorController = idleAnim;
         }
     }
