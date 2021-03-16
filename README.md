@@ -1,5 +1,4 @@
-CARL THE KOBOLD - Games Programming Project
-========================
+<h1 align = "center"> CARL THE KOBOLD - Games Programming Project </h1>
 
 <p align = "center"><img src = "https://github.com/Hannah-Ashna/Games-Programming-Project/blob/main/DungeonGame/Assets/Sprites/Logo.png" width = "400" height = "400"></p> 
 
