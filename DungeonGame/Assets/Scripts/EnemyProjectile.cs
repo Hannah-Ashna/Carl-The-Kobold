@@ -19,14 +19,16 @@ public class EnemyProjectile : MonoBehaviour
 
     void Update(){
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        // Check if projectile reaches player
+
         if (transform.position.x == target.x && transform.position.y == target.y){
+            // Check if projectile reaches player, if yes, destroy it
             DestroyProjectile();
         }
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
+            // Update player's health with specified damage
             playerObj.GetComponent<PlayerData>().ReduceHealth(damage);
             DestroyProjectile();
         }

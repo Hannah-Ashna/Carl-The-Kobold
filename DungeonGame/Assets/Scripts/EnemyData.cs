@@ -8,29 +8,27 @@ public class EnemyData : MonoBehaviour
     public double health;
 
     public bool damageEnemy(){
-        // If enemy is still healthy, reduce their health
+        
         if (health > 0) {
+            // If enemy is still healthy, reduce their health
             health -= 5;
-
             return false;
-        }
-
-        // Otherwise kill them off
-        else if (health == 0) {          
+        } else if (health == 0) {
+             // Otherwise kill them off      
             KillEnemy();
             return true;
-        }
-
-        else {
+        } else {
             return false;
         }
     }
 
     void KillEnemy(){
         if (gameObject.name == "Boss(Clone)") {
+            // If the Dead enemy is the Boss, end the game - load Win Scene
             SceneManager.LoadScene("WinScene");
         }
         else {
+            // Otherwise just destroy the minion enemy
             Destroy(gameObject); 
         }
     }

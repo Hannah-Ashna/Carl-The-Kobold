@@ -29,23 +29,16 @@ public class PlayerAnimator : MonoBehaviour
         // Get Status from Player Damage to see if Player is engaged in combat
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDamage>().attackStatus()){
             animator.runtimeAnimatorController = attack;
-        }
-
-        // Flip Player to the Left
-        else if (moveHorizontal < 0){
+        } else if (moveHorizontal < 0){
+            // Flip Player to the Left
             flipSprite = true;
             animator.runtimeAnimatorController = walk;
-
-        }
-
-        // Flip Player to the Right
-        else if (moveHorizontal > 0){
+        } else if (moveHorizontal > 0){
+            // Flip Player to the Right
             flipSprite = false;
             animator.runtimeAnimatorController = walk;
-        }
-
-        // Idle Animation
-        else {
+        } else {
+            // Idle Animation
             animator.runtimeAnimatorController = idle;
         }
 

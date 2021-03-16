@@ -15,8 +15,7 @@ public class PlayerDamage : MonoBehaviour
     }
 
     void Update() {
-        // User attacks enemy by pressing space
-        
+        // User attacks enemy by pressing space   
         if (Input.GetKeyDown(KeyCode.Space) && nearEnemy == true){
             try {
                 attackEnemy();  
@@ -73,6 +72,7 @@ public class PlayerDamage : MonoBehaviour
     }
 
     public bool attackStatus (){
+        // Return status of player's combat to be used by Player Animator
         return isAttacking;
     }
 }

@@ -29,15 +29,18 @@ public class MinionAnimator : MonoBehaviour
         if(gameObject.name == "Minion(Clone)"){
             try {
                 if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
+                     // Walking Animation
                     animator.runtimeAnimatorController = MWalk;
-                }
-                else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
+                } else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
+                     // Attack Animation
                     animator.runtimeAnimatorController = MAttack;
-                }
-                else {
+                } else {
+                     // Idle Animation
                     animator.runtimeAnimatorController = MIdle;
                 }
-            } catch{}
+            } catch{
+                // Couldn't animate
+            }
         }
     }
 }

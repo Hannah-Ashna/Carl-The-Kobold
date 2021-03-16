@@ -29,16 +29,18 @@ public class BossAnimator : MonoBehaviour
         if(gameObject.name == "Boss(Clone)"){
             try {
                 if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
+                    // Walking Animation
                     animator.runtimeAnimatorController = BWalk;
-                }
-                else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
+                } else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
+                    // Attack Animation
                     animator.runtimeAnimatorController = BAttack;
-                }
-                else {
+                } else {
+                    // Idle Animation
                     animator.runtimeAnimatorController = BIdle;
                 }
-            } catch {}
-
+            } catch {
+                // Couldn't animate
+            }
         }
     }
 }

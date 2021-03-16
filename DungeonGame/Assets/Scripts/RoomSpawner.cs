@@ -15,6 +15,8 @@ public class RoomSpawner : MonoBehaviour
     private bool spawned = false;
     void Start(){
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+
+        // Delay for a few seconds
         Invoke("SpawnRoom", 0.1f);
     }
 
@@ -46,8 +48,8 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    // Prevent rooms from being spawned on top of each other
     void OnTriggerEnter2D(Collider2D collision){
+        // Prevent rooms from being spawned on top of each other
         try {
             if(collision.CompareTag("SpawnPoint")){
                 if(collision.GetComponent<RoomSpawner>().spawned == false && spawned == false){
@@ -57,7 +59,7 @@ public class RoomSpawner : MonoBehaviour
                 spawned = true;
             }
         } catch {
-            print("NULL");
+            // Do Nothing
         }
     }
 }

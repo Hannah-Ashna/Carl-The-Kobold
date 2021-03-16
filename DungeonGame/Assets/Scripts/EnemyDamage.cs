@@ -11,6 +11,8 @@ public class EnemyDamage : MonoBehaviour
 
     void Start (){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        // Assign a random range between shots duration to vary the pace + difficulty of the game
         startTimeBetweenShots = Random.Range(1f, 2f);
         timeBetweenShots = startTimeBetweenShots;
     }
@@ -22,6 +24,7 @@ public class EnemyDamage : MonoBehaviour
                 Vector3 dir = player.position - transform.position;
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
+                // Shoot a projectile blast
                 Instantiate(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
                 timeBetweenShots = startTimeBetweenShots;
             } else {
