@@ -12,12 +12,12 @@ public class PlayerDamage : MonoBehaviour
     void Start(){
         loot = GameObject.FindGameObjectWithTag("Loot").GetComponent<Loot>();
     }
+
     void Update() {
         // User attacks enemy by pressing space
         if (Input.GetKeyDown(KeyCode.Space) && nearEnemy == true){
             try {
                 attackEnemy();
-                print("HIT!");
             } catch {
                 print("MISS!");
             }
@@ -43,7 +43,6 @@ public class PlayerDamage : MonoBehaviour
     void attackEnemy(){
         // Damage the enemy by reducing its health
         isEnemyDead = enemyObj.GetComponent<EnemyData>().damageEnemy();
-
         // Drop some Loot if Enemy is Dead
         if (isEnemyDead == true){
             // Randomise Loot Chance
