@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class PlayerData : MonoBehaviour
 {
 
@@ -89,6 +90,11 @@ public class PlayerData : MonoBehaviour
 
     // Kill the Player
     void KillPlayer(){
-        //Destroy(player);
+        SceneManager.LoadScene("LoseScene");
+    }
+
+    // End the Game
+    void EndGame(){
+        SceneManager.LoadScene("WinScene");
     }
 }

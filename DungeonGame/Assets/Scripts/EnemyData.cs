@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyData : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class EnemyData : MonoBehaviour
     }
 
     void KillEnemy(){
-        Destroy(gameObject); 
+        if (gameObject.name == "Boss(Clone)") {
+            SceneManager.LoadScene("WinScene");
+        }
+        else {
+            Destroy(gameObject); 
+        }
     }
 }

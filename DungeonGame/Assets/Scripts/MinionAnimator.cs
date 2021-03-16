@@ -27,15 +27,17 @@ public class MinionAnimator : MonoBehaviour
 
         // Must have (Clone) as it's an instance of the Prefab
         if(gameObject.name == "Minion(Clone)"){
-            if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
-                animator.runtimeAnimatorController = MWalk;
-            }
-            else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
-                animator.runtimeAnimatorController = MAttack;
-            }
-            else {
-                animator.runtimeAnimatorController = MIdle;
-            }
+            try {
+                if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
+                    animator.runtimeAnimatorController = MWalk;
+                }
+                else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
+                    animator.runtimeAnimatorController = MAttack;
+                }
+                else {
+                    animator.runtimeAnimatorController = MIdle;
+                }
+            } catch{}
         }
     }
 }
