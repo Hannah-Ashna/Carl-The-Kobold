@@ -7,6 +7,7 @@ public class PlayerDamage : MonoBehaviour
     private GameObject enemyObj;
     private Loot loot;
     private bool isEnemyDead = false;
+    private bool isAttacking = false;
     public bool nearEnemy = false;
 
     void Start(){
@@ -15,9 +16,10 @@ public class PlayerDamage : MonoBehaviour
 
     void Update() {
         // User attacks enemy by pressing space
+        
         if (Input.GetKeyDown(KeyCode.Space) && nearEnemy == true){
             try {
-                attackEnemy();
+                attackEnemy();  
             } catch {
                 print("MISS!");
             }
@@ -30,6 +32,7 @@ public class PlayerDamage : MonoBehaviour
             // Targets the correct Enemy object instead of a random one
             enemyObj = other.gameObject;
             nearEnemy = true;
+            isAttacking = true;
         }
     }
 
@@ -37,6 +40,7 @@ public class PlayerDamage : MonoBehaviour
         // Check if the player is no longer colliding with enemy
         if (other.CompareTag("Enemy")){
             nearEnemy = false;
+            isAttacking = false;
         }
     }
 
@@ -66,5 +70,9 @@ public class PlayerDamage : MonoBehaviour
             // Reset Status
             isEnemyDead = false;
         }
+    }
+
+    public bool attackStatus (){
+        return isAttacking;
     }
 }

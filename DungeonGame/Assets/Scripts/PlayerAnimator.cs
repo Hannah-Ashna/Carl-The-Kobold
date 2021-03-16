@@ -13,7 +13,6 @@ public class PlayerAnimator : MonoBehaviour
     RuntimeAnimatorController attack;
 
     private bool flipSprite = false;
-    private bool attackEnemy = false;
 
     void Start(){;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,37 +22,34 @@ public class PlayerAnimator : MonoBehaviour
         attack = Resources.Load("Animations/PlayerAttack") as RuntimeAnimatorController;
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Space)){
-            attackEnemy = true;
-        } else if (Input.GetKeyUp(KeyCode.Space)) {
-            attackEnemy = false;
-        }
-    }
     void FixedUpdate(){
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        
-        if (attackEnemy == true){
-            print("wack");
+
+        // Get Status from Player Damage to see if Player is engaged in combat
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDamage>().attackStatus()){
             animator.runtimeAnimatorController = attack;
         }
 
+        // Flip Player to the Left
         else if (moveHorizontal < 0){
             flipSprite = true;
             animator.runtimeAnimatorController = walk;
 
         }
 
+        // Flip Player to the Right
         else if (moveHorizontal > 0){
             flipSprite = false;
             animator.runtimeAnimatorController = walk;
         }
 
+        // Idle Animation
         else {
             animator.runtimeAnimatorController = idle;
         }
 
         spriteRenderer.flipX = flipSprite;
     }
+
 }
