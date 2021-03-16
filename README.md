@@ -1,4 +1,8 @@
-# Games-Programming-Project
+CARL THE KOBOLD - Games Programming Project
+========================
+
+<p align = "center"><img src = "https://github.com/Hannah-Ashna/Games-Programming-Project/blob/main/DungeonGame/Assets/Sprites/Logo.png" width = "400" height = "400"></p> 
+
 ### Brief description: 
 It seems that the warlock you spoke to double-crossed you and you are now trapped in his dungeon! You will need to navigate a way out all while trying to keep your sanity intact and your health bar looking healthy. With monsters lurking around almost every corner, will you be the first to survive this dungeon of horrors?
  
