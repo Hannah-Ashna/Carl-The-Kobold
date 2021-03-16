@@ -24,7 +24,9 @@ public class BossAnimator : MonoBehaviour
     void FixedUpdate(){
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        if(gameObject.name == "Boss"){
+
+        // Must have (Clone) as it's an instance of the Prefab
+        if(gameObject.name == "Boss(Clone)"){
             if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
                 animator.runtimeAnimatorController = BWalk;
             }
