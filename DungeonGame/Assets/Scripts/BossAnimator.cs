@@ -30,7 +30,7 @@ public class BossAnimator : MonoBehaviour
             if (moveHorizontal < 0 || moveHorizontal > 0 || moveVertical < 0 || moveVertical > 0) {
                 animator.runtimeAnimatorController = BWalk;
             }
-            else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 5) {
+            else if (moveHorizontal == 0 && moveVertical == 0 && Vector2.Distance(transform.position, player.position) < 6) {
                 animator.runtimeAnimatorController = BAttack;
             }
             else {
