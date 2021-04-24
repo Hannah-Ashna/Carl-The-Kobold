@@ -59,7 +59,7 @@ public class RoomSpawner : MonoBehaviour
                 spawned = true;
             }
         } catch {
-            // Do Nothing
+            print("Error");
         }
     }
 }
